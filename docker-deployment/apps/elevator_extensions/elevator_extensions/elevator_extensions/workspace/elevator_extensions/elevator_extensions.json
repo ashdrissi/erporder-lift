@@ -1,0 +1,42 @@
+{
+    "charts": [],
+    "content": "[{\"id\":\"shortcut-logistics-settings\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Logistics Settings\",\"doc_view\":\"\"}},{\"id\":\"shortcut-quotation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"doc_view\":\"List\"}},{\"id\":\"section-settings\",\"type\":\"header\",\"data\":{\"text\":\"Settings\",\"col\":12}},{\"id\":\"link-logistics-settings\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration\",\"col\":4}}]",
+    "creation": "2026-01-22 02:30:00",
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "tool",
+    "idx": 0,
+    "is_hidden": 0,
+    "label": "Elevator Extensions",
+    "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Logistics Settings",
+            "link_count": 0,
+            "link_to": "Logistics Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        }
+    ],
+    "module": "Elevator Extensions",
+    "name": "Elevator Extensions",
+    "owner": "Administrator",
+    "parent_page": "",
+    "public": 1,
+    "restrict_to_domain": "",
+    "roles": [],
+    "sequence_id": 1,
+    "shortcuts": [
+        {
+            "color": "Blue",
+            "doc_view": "",
+            "label": "Logistics Settings",
+            "link_to": "Logistics Settings",
+            "type": "DocType"
+        }
+    ],
+    "title": "Elevator Extensions"
+}

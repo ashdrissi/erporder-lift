@@ -1,0 +1,23 @@
+/* simplified_desk.css - Custom CSS to simplify ERPNext Desk UI */
+
+/* Example: Hide the 'Help' menu in the navbar */
+/*
+.navbar .nav-item.dropdown-help {
+    display: none !important;
+}
+*/
+
+/* Example: Hide the separate 'Website' link if not needed */
+/*
+.navbar .nav-item.dropdown-website {
+    display: none !important;
+}
+*/
+
+/* Example: Simplify Form Section Break headers */
+/*
+.form-section-heading {
+    text-transform: none;
+    font-weight: 600;
+}
+*/

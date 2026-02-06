@@ -1,0 +1,13 @@
+{
+    "creation": "2026-01-22 02:26:00",
+    "doctype": "Module Def",
+    "idx": 0,
+    "module_name": "Elevator Extensions",
+    "modified": "2026-01-22 02:26:00",
+    "modified_by": "Administrator",
+    "name": "Elevator Extensions",
+    "owner": "Administrator",
+    "restrict_to_domain": "",
+    "app_name": "elevator_extensions",
+    "custom": 0
+}

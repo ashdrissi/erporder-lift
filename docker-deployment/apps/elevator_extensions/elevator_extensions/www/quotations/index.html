@@ -1,0 +1,65 @@
+# My Quotations
+
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-4">
+    <h2>My Quotations</h2>
+    <p>Review and accept your quotations below.</p>
+    
+    <div id="quotations-list">
+        <p class="text-muted">Loading...</p>
+    </div>
+</div>
+
+<script>
+frappe.ready(function() {
+    frappe.call({
+        method: 'elevator_extensions.portal_api.get_customer_quotations',
+        callback: function(r) {
+            if (r.message && r.message.length) {
+                render_quotations(r.message);
+            } else {
+                $('#quotations-list').html('<p class="text-muted">No quotations found.</p>');
+            }
+        }
+    });
+});
+
+function render_quotations(quotations) {
+    var html = '<table class="table"><thead><tr><th>Quotation</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead><tbody>';
+    
+    quotations.forEach(function(q) {
+        var action = q.customer_accepted 
+            ? '<span class="badge badge-success">Accepted</span>'
+            : '<button class="btn btn-primary btn-sm" onclick="accept_quote(\'' + q.name + '\')">Accept</button>';
+        
+        html += '<tr>';
+        html += '<td><a href="/quotations/' + q.name + '">' + q.name + '</a></td>';
+        html += '<td>' + q.transaction_date + '</td>';
+        html += '<td>' + format_currency(q.grand_total) + '</td>';
+        html += '<td>' + q.status + '</td>';
+        html += '<td>' + action + '</td>';
+        html += '</tr>';
+    });
+    
+    html += '</tbody></table>';
+    $('#quotations-list').html(html);
+}
+
+function accept_quote(name) {
+    frappe.confirm('Are you sure you want to accept this quotation?', function() {
+        frappe.call({
+            method: 'elevator_extensions.portal_api.accept_quotation',
+            args: { quotation_name: name },
+            callback: function(r) {
+                if (r.message && r.message.status === 'success') {
+                    frappe.msgprint(r.message.message);
+                    location.reload();
+                }
+            }
+        });
+    });
+}
+</script>
+{% endblock %}

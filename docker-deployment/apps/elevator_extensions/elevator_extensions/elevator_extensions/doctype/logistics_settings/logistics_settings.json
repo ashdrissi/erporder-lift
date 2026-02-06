@@ -1,0 +1,294 @@
+{
+    "actions": [],
+    "creation": "2026-01-22 02:26:00",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_transport",
+        "lcl_max_volume",
+        "container_20ft_max_volume",
+        "column_break_1",
+        "container_40ft_max_volume",
+        "container_40ft_hq_max_volume",
+        "section_labels",
+        "lcl_label",
+        "container_20ft_label",
+        "column_break_2",
+        "container_40ft_label",
+        "container_40ft_hq_label",
+        "multiple_containers_label",
+        "section_quotation",
+        "default_quote_validity_days",
+        "auto_send_quote_email",
+        "quote_email_template",
+        "column_break_3",
+        "enable_customer_acceptance",
+        "require_acceptance_before_order",
+        "section_pricing",
+        "default_price_list",
+        "apply_volume_discounts",
+        "column_break_4",
+        "default_commission_rate",
+        "section_stock",
+        "default_source_warehouse",
+        "enable_auto_reorder",
+        "column_break_5",
+        "reorder_level_buffer_percent",
+        "section_notifications",
+        "notify_sales_on_quote_accept",
+        "notify_stock_on_low_inventory",
+        "column_break_6",
+        "low_inventory_threshold",
+        "notification_email"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_transport",
+            "fieldtype": "Section Break",
+            "label": "Transport Thresholds (m³)"
+        },
+        {
+            "default": "15",
+            "description": "Max volume for LCL/Small Truck",
+            "fieldname": "lcl_max_volume",
+            "fieldtype": "Float",
+            "label": "LCL Max Volume",
+            "reqd": 1
+        },
+        {
+            "default": "28",
+            "description": "Max volume for 20ft Container",
+            "fieldname": "container_20ft_max_volume",
+            "fieldtype": "Float",
+            "label": "20ft Container Max Volume",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "58",
+            "description": "Max volume for 40ft Container",
+            "fieldname": "container_40ft_max_volume",
+            "fieldtype": "Float",
+            "label": "40ft Container Max Volume",
+            "reqd": 1
+        },
+        {
+            "default": "68",
+            "description": "Max volume for 40ft High Cube",
+            "fieldname": "container_40ft_hq_max_volume",
+            "fieldtype": "Float",
+            "label": "40ft HQ Max Volume",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_labels",
+            "fieldtype": "Section Break",
+            "label": "Transport Labels",
+            "collapsible": 1
+        },
+        {
+            "default": "LCL (Shared Container) / Small Truck",
+            "fieldname": "lcl_label",
+            "fieldtype": "Data",
+            "label": "LCL Label"
+        },
+        {
+            "default": "20ft Container",
+            "fieldname": "container_20ft_label",
+            "fieldtype": "Data",
+            "label": "20ft Container Label"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "40ft Container",
+            "fieldname": "container_40ft_label",
+            "fieldtype": "Data",
+            "label": "40ft Container Label"
+        },
+        {
+            "default": "40ft High Cube Container",
+            "fieldname": "container_40ft_hq_label",
+            "fieldtype": "Data",
+            "label": "40ft HQ Label"
+        },
+        {
+            "default": "Multiple Containers",
+            "fieldname": "multiple_containers_label",
+            "fieldtype": "Data",
+            "label": "Multiple Containers Label"
+        },
+        {
+            "fieldname": "section_quotation",
+            "fieldtype": "Section Break",
+            "label": "Quotation Settings"
+        },
+        {
+            "default": "10",
+            "description": "Default validity period for quotations",
+            "fieldname": "default_quote_validity_days",
+            "fieldtype": "Int",
+            "label": "Default Quote Validity (Days)"
+        },
+        {
+            "default": "0",
+            "description": "Automatically send quote email to customer",
+            "fieldname": "auto_send_quote_email",
+            "fieldtype": "Check",
+            "label": "Auto Send Quote Email"
+        },
+        {
+            "fieldname": "quote_email_template",
+            "fieldtype": "Link",
+            "label": "Quote Email Template",
+            "options": "Email Template",
+            "depends_on": "eval:doc.auto_send_quote_email"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "description": "Allow customers to accept quotes via portal",
+            "fieldname": "enable_customer_acceptance",
+            "fieldtype": "Check",
+            "label": "Enable Customer Acceptance"
+        },
+        {
+            "default": "0",
+            "description": "Customer must accept quote before creating Sales Order",
+            "fieldname": "require_acceptance_before_order",
+            "fieldtype": "Check",
+            "label": "Require Acceptance Before Order"
+        },
+        {
+            "fieldname": "section_pricing",
+            "fieldtype": "Section Break",
+            "label": "Pricing & Commission"
+        },
+        {
+            "fieldname": "default_price_list",
+            "fieldtype": "Link",
+            "label": "Default Price List",
+            "options": "Price List"
+        },
+        {
+            "default": "1",
+            "description": "Automatically apply volume-based discounts",
+            "fieldname": "apply_volume_discounts",
+            "fieldtype": "Check",
+            "label": "Apply Volume Discounts"
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "5",
+            "description": "Default sales commission percentage",
+            "fieldname": "default_commission_rate",
+            "fieldtype": "Percent",
+            "label": "Default Commission Rate (%)"
+        },
+        {
+            "fieldname": "section_stock",
+            "fieldtype": "Section Break",
+            "label": "Stock Settings"
+        },
+        {
+            "fieldname": "default_source_warehouse",
+            "fieldtype": "Link",
+            "label": "Default Source Warehouse",
+            "options": "Warehouse"
+        },
+        {
+            "default": "1",
+            "description": "Enable automatic reorder alerts",
+            "fieldname": "enable_auto_reorder",
+            "fieldtype": "Check",
+            "label": "Enable Auto Reorder Alerts"
+        },
+        {
+            "fieldname": "column_break_5",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "20",
+            "description": "Buffer percentage above reorder level",
+            "fieldname": "reorder_level_buffer_percent",
+            "fieldtype": "Percent",
+            "label": "Reorder Buffer (%)"
+        },
+        {
+            "fieldname": "section_notifications",
+            "fieldtype": "Section Break",
+            "label": "Notifications"
+        },
+        {
+            "default": "1",
+            "description": "Notify sales team when customer accepts quote",
+            "fieldname": "notify_sales_on_quote_accept",
+            "fieldtype": "Check",
+            "label": "Notify on Quote Accept"
+        },
+        {
+            "default": "1",
+            "description": "Notify stock team on low inventory",
+            "fieldname": "notify_stock_on_low_inventory",
+            "fieldtype": "Check",
+            "label": "Notify on Low Inventory"
+        },
+        {
+            "fieldname": "column_break_6",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "10",
+            "description": "Days of stock remaining to trigger alert",
+            "fieldname": "low_inventory_threshold",
+            "fieldtype": "Int",
+            "label": "Low Inventory Threshold (Days)"
+        },
+        {
+            "fieldname": "notification_email",
+            "fieldtype": "Data",
+            "label": "Notification Email",
+            "options": "Email"
+        }
+    ],
+    "issingle": 1,
+    "modified": "2026-01-22 02:32:00",
+    "modified_by": "Administrator",
+    "module": "Elevator Extensions",
+    "name": "Logistics Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Sales Manager",
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Stock Manager",
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC"
+}
